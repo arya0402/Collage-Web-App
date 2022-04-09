@@ -19,31 +19,26 @@ recognition.onresult = function (event) {
 
 function speak() {
     var synth = window.speechSynthesis;
-    speak_data = "Taking your selfie in 10 seconds";
+    speak_data = "Taking your selfie in 5 seconds";
     var utterThis = new SpeechSynthesisUtterance(speak_data);
     synth.speak(utterThis);
-    setTimeout(testCall, 2000);
-    // setTimeout(function () 
-    // {
-    //     take_snapshot();
-    //     img_id = "selfie1";
-    //     speak_data = "Taking your selfie in 10 seconds";
-    //     var utterThis = new SpeechSynthesisUtterance(speak_data);
-    //     synth.speak(utterThis);
+    setTimeout(function () {
+        take_snapshot();
+        img_id = "selfie1";
+        speak_data = "Taking your selfie in 5 seconds";
+        var utterThis = new SpeechSynthesisUtterance(speak_data);
+        synth.speak(utterThis);
+    }, 5000);
 
-    // }, 10000);
+    setTimeout(function () {
+        take_snapshot();
+        img_id = "selfie2";
+        speak_data = "Taking your selfie in 10 seconds";
+        var utterThis = new SpeechSynthesisUtterance(speak_data);
+        synth.speak(utterThis);
+    }, 10000);
     Webcam.attach(camera);
 }
-
-function testCall() {
-    take_snapshot();
-    img_id = "selfie1";
-    speak_data = "Taking your selfie in 10 seconds";
-    var utterThis = new SpeechSynthesisUtterance(speak_data);
-    synth.speak(utterThis);
-}
-
-
 
 function take_snapshot() {
     console.log(img_id);
