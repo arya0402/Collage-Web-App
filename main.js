@@ -3,7 +3,7 @@ var SpeechRecognition = window.webkitSpeechRecognition;
 var recognition = new SpeechRecognition();
 
 var content;
-
+var img_id = "selfie1";
 function start() {
     recognition.start();
 }
@@ -22,23 +22,28 @@ function speak() {
     speak_data = "Taking your selfie in 10 seconds";
     var utterThis = new SpeechSynthesisUtterance(speak_data);
     synth.speak(utterThis);
-    setTimeout(function () {
-        take_snapshot();
-        img_id = "selfie1";
-        speak_data = "Taking your selfie in 10 seconds";
-        var utterThis = new SpeechSynthesisUtterance(speak_data);
-        synth.speak(utterThis);
+    setTimeout(testCall, 2000);
+    // setTimeout(function () 
+    // {
+    //     take_snapshot();
+    //     img_id = "selfie1";
+    //     speak_data = "Taking your selfie in 10 seconds";
+    //     var utterThis = new SpeechSynthesisUtterance(speak_data);
+    //     synth.speak(utterThis);
 
-    }, 10000);
+    // }, 10000);
     Webcam.attach(camera);
 }
 
-var img_id = "selfie1";
+function testCall() {
+    take_snapshot();
+    img_id = "selfie1";
+    speak_data = "Taking your selfie in 10 seconds";
+    var utterThis = new SpeechSynthesisUtterance(speak_data);
+    synth.speak(utterThis);
+}
 
 
-setTimeout(function() {
-
-}, 10000);
 
 function take_snapshot() {
     console.log(img_id);
