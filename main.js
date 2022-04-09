@@ -24,19 +24,16 @@ function speak() {
     synth.speak(utterThis);
     setTimeout(function () {
         take_snapshot();
-        img_id = "selfie1";
-        speak_data = "Taking your selfie in 5 seconds";
-        var utterThis = new SpeechSynthesisUtterance(speak_data);
+        img_id = "selfie2";
+        speak_data = "Taking your selfie in 10 seconds";
+        utterThis = new SpeechSynthesisUtterance(speak_data);
         synth.speak(utterThis);
+        
     }, 5000);
 
     setTimeout(function () {
         take_snapshot();
-        img_id = "selfie2";
-        speak_data = "Taking your selfie in 10 seconds";
-        var utterThis = new SpeechSynthesisUtterance(speak_data);
-        synth.speak(utterThis);
-    }, 10000);
+    }, 15000);
     Webcam.attach(camera);
 }
 
