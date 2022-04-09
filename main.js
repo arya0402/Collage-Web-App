@@ -32,7 +32,7 @@ function speak() {
 var img_id = "selfie1";
 
 
-function setTimeout(function() {
+setTimeout(function() {
     img_id = "selfie1";
     take_snapshot();
     speak_data = "Taking your selfie in 10 seconds";
